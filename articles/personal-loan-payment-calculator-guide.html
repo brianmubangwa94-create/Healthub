@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Loan Payment Calculator – Estimate Monthly Payments | CreditLadderHub</title>
+    <meta name="description" content="Free personal loan calculator: estimate monthly payments, total interest, and see how loan terms affect your costs. Includes guide to saving money.">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="logo">
+            <a href="../index.html">Credit<span>Ladder</span>Hub</a>
+        </div>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="what-is-credit-building-loan.html">Loan Types</a>
+            <a href="../index.html#calculators">Calculators</a>
+            <a href="../about.html">About</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <article>
+            <h1>Personal Loan Payment Calculator – Estimate Your Monthly Payment</h1>
+            
+            <p><strong>Published:</strong> March 16, 2026 | <strong>Est. read time:</strong> 6 minutes</p>
+            
+            <div class="disclaimer-box">
+                🧮 <strong>Use the calculator below</strong> to see exactly what your monthly payment will be before you apply for any loan.
+            </div>
+
+            <h2>Loan Payment Calculator</h2>
+            
+            <div class="calculator">
+                <label>💰 Loan Amount ($):</label>
+                <input type="number" id="loanAmount" placeholder="e.g., 10000" value="10000">
+                
+                <label>📈 Annual Interest Rate (%):</label>
+                <input type="number" id="interestRate" placeholder="e.g., 12.5" value="12.5">
+                
+                <label>📅 Loan Term (months):</label>
+                <input type="number" id="loanTerm" placeholder="e.g., 36" value="36">
+                
+                <label>💸 Origination Fee (%):</label>
+                <input type="number" id="originationFee" placeholder="e.g., 5" value="0">
+                
+                <button onclick="calculateLoanDetailed()">Calculate Payment</button>
+                
+                <div class="result" id="result">
+                    Enter your loan details above
+                </div>
+            </div>
+
+            <h2>How to Use This Calculator</h2>
+            <ol>
+                <li><strong>Loan Amount:</strong> How much you want to borrow (before fees)</li>
+                <li><strong>Interest Rate:</strong> The APR lenders quote you (e.g., 12.5% = 12.5)</li>
+                <li><strong>Loan Term:</strong> How many months to repay (12, 24, 36, 48, 60 common)</li>
+                <li><strong>Origination Fee:</strong> One-time fee lenders take from loan (0–8% typical)</li>
+            </ol>
+            
+            <p>The calculator shows your monthly payment, total interest, total fees, and the final amount you'll actually receive.</p>
+
+            <h2>Real Examples: How Loan Terms Change Your Payment</h2>
+            
+            <p><strong>Example loan:</strong> $10,000 at 12% APR</p>
+            
+            <table>
+                <tr>
+                    <th>Term</th>
+                    <th>Monthly Payment</th>
+                    <th>Total Interest</th>
+                    <th>Total Cost</th>
+                </tr>
+                <tr><td>12 months</td><td>$888</td><td>$662</td><td>$10,662</td></tr>
+                <tr><td>24 months</td><td>$471</td><td>$1,297</td><td>$11,297</td></tr>
+                <tr><td>36 months</td><td>$332</td><td>$1,952</td><td>$11,952</td></tr>
+                <tr><td>48 months</td><td>$263</td><td>$2,623</td><td>$12,623</td></tr>
+                <tr><td>60 months</td><td>$222</td><td>$3,311</td><td>$13,311</td></tr>
+            </table>
+            
+            <div class="comparison-card">
+                <strong>💡 Key insight:</strong> A 60-month loan has a <strong>$666 lower monthly payment</strong> than a 12-month loan, but costs <strong>$2,649 more</strong> in total interest. Choose the shortest term you can afford.
+            </div>
+
+            <h2>How Interest Rates Affect Your Total Cost</h2>
+            
+            <p><strong>Example loan:</strong> $10,000 over 36 months at different APRs (fair credit range)</p>
+            
+            <table>
+                <tr>
+                    <th>APR</th>
+                    <th>Monthly Payment</th>
+                    <th>Total Interest</th>
+                    <th>Total Cost</th>
+                </tr>
+                <tr><td>10% (good credit)</td><td>$323</td><td>$1,616</td><td>$11,616</td></tr>
+                <tr><td>15% (mid fair credit)</td><td>$347</td><td>$2,480</td><td>$12,480</td></tr>
+                <tr><td>20% (low fair credit)</td><td>$372</td><td>$3,374</td><td>$13,374</td></tr>
+                <tr><td>25% (poor credit)</td><td>$397</td><td>$4,296</td><td>$14,296</td></tr>
+                <tr><td>30% (very poor credit)</td><td>$424</td><td>$5,247</td><td>$15,247</td></tr>
+            </table>
+            
+            <p><strong>The difference:</strong> Going from 15% to 25% APR (common for fair credit borrowers) adds $50/month and $1,816 in extra interest over 3 years.</p>
+
+            <h2>Origination Fees: The Hidden Cost</h2>
+            
+            <p>Many lenders charge an origination fee (1–8%) that comes directly out of your loan. This means you receive less than you borrowed.</p>
+            
+            <p><strong>Example:</strong> $10,000 loan at 15% APR, 36 months, with varying origination fees</p>
+            
+            <table>
+                <tr>
+                    <th>Origination Fee</th>
+                    <th>Amount You Receive</th>
+                    <th>Monthly Payment (on $10k)</th>
+                    <th>Effective APR</th>
+                </tr>
+                <tr><td>0%</td><td>$10,000</td><td>$347</td><td>15%</td></tr>
+                <tr><td>3%</td><td>$9,700</td><td>$347</td><td>~16.5%</td></tr>
+                <tr><td>6%</td><td>$9,400</td><td>$347</td><td>~18.2%</td></tr>
+                <tr><td>8%</td><td>$9,200</td><td>$347</td><td>~19.8%</td></tr>
+            </table>
+            
+            <div class="disclaimer-box">
+                ⚠️ Always check the origination fee. A loan with 15% APR plus 8% origination fee is effectively more expensive than a loan with 20% APR and 0% origination fee.
+            </div>
+
+            <h2>How to Lower Your Monthly Payment</h2>
+            
+            <h3>Option 1: Extend Your Term (Costs More Total)</h3>
+            <p>A 60-month loan has lower monthly payments than a 36-month loan, but you'll pay thousands more in interest. Only extend if you truly can't afford higher payments.</p>
+            
+            <h3>Option 2: Improve Your Credit First (Saves Money)</h3>
+            <p>Waiting 3–6 months to raise your credit score by 40–60 points can lower your APR by 5–10%. On a $10,000 loan, that saves $1,000–$2,000 in interest.</p>
+            
+            <h3>Option 3: Borrow Less</h3>
+            <p>Obvious but overlooked. Calculate the minimum you actually need. Every $1,000 less borrowed saves $20–$40 per month.</p>
+            
+            <h3>Option 4: Add a Co-signer</h3>
+            <p>If someone with good credit (700+) co-signs, your APR can drop by 10–15%. But they are legally responsible if you default.</p>
+
+            <h2>Debt-to-Income Ratio: Will You Be Approved?</h2>
+            
+            <p>Lenders care about your debt-to-income ratio (DTI): Total monthly debt payments ÷ Gross monthly income.</p>
+            
+            <ul>
+                <li><strong>Below 36%:</strong> Excellent, high approval odds</li>
+                <li><strong>36–43%:</strong> Good, most lenders approve</li>
+                <li><strong>43–50%:</strong> Marginal, some lenders deny</li>
+                <li><strong>Above 50%:</strong> Low approval odds, need lower loan amount</li>
+            </ul>
+            
+            <p><strong>Example:</strong> If you earn $4,000/month gross and pay $1,200 in existing debts (rent + car + minimum credit card), your DTI is 30%. Adding a $400 loan payment would make it 40% ($1,600 ÷ $4,000).</p>
+
+            <h2>When Should You NOT Take a Personal Loan?</h2>
+            
+            <h3>✗ Avoid a personal loan if:</h3>
+            <ul>
+                <li>You're using it for discretionary spending (vacation, luxury items)</li>
+                <li>Your DTI would exceed 45% after the loan</li>
+                <li>You have existing late payments or collections (fix those first)</li>
+                <li>The APR is above 25% (consider credit-builder loan instead)</li>
+                <li>You're consolidating debt but haven't fixed the spending problem</li>
+            </ul>
+            
+            <h3>✓ Consider a personal loan for:</h3>
+            <ul>
+                <li>Debt consolidation at lower APR than credit cards</li>
+                <li>Emergency medical or home repair</li>
+                <li>Building credit (use credit-builder loan product specifically)</li>
+                <li>Major life event with clear ROI (moving for a higher-paying job)</li>
+            </ul>
+
+            <h2>Step-by-Step: Compare Loan Offers</h2>
+            
+            <p>When you have offers from multiple lenders, use this checklist:</p>
+            <ol>
+                <li><strong>Use the calculator above</strong> with each lender's APR, term, and origination fee</li>
+                <li><strong>Compare the total cost</strong> (total payments + origination fees), not monthly payment</li>
+                <li><strong>Check prepayment penalties</strong> – none of our recommended lenders have these, but some do</li>
+                <li><strong>Read the fine print</strong> for late fees (typically $15–$39 per late payment)</li>
+                <li><strong>Verify they report to all 3 bureaus</strong> if credit building is a goal</li>
+            </ol>
+
+            <h2>FAQs</h2>
+            
+            <h3>How is my monthly payment calculated?</h3>
+            <p>The formula is: P × (r(1+r)^n) / ((1+r)^n - 1) where P = principal, r = monthly interest rate, n = months. Or just use our calculator above!</p>
+            
+            <h3>Can I pay off my loan early?</h3>
+            <p>Most personal loans have no prepayment penalty. Paying early saves you interest. Confirm with your lender before signing.</p>
+            
+            <h3>What happens if I miss a payment?</h3>
+            <p>After 30 days, the lender reports a late payment to credit bureaus (drops your score 50–100 points). After 90 days, default and collections begin.</p>
+            
+            <h3>Should I choose a longer term if I plan to pay early?</h3>
+            <p>Yes, if there's no prepayment penalty. Choose a longer term for lower required payment (safety net), but pay extra each month to reduce interest.</p>
+
+            <h2>Final Checklist Before Applying</h2>
+            
+            <ul>
+                <li>☐ Used the calculator above to confirm you can afford the monthly payment</li>
+                <li>☐ Compared 3+ lenders using soft pull pre-approval</li>
+                <li>☐ Calculated total cost including origination fees</li>
+                <li>☐ Checked your DTI – new payment keeps you under 45%</li>
+                <li>☐ Read the late payment and prepayment policies</li>
+                <li>☐ Confirmed the lender reports to all 3 credit bureaus</li>
+            </ul>
+            
+            <div class="disclaimer-box">
+                <strong>Remember:</strong> A loan is a tool. Used wisely (low APR, affordable payment, on-time payments), it builds credit. Used poorly (high APR, missed payments), it destroys credit.
+            </div>
+        </article>
+    </div>
+</main>
+
+<script>
+function calculateLoanDetailed() {
+    let amount = parseFloat(document.getElementById('loanAmount').value);
+    let rate = parseFloat(document.getElementById('interestRate').value);
+    let term = parseFloat(document.getElementById('loanTerm').value);
+    let feePercent = parseFloat(document.getElementById('originationFee').value);
+    
+    if (isNaN(amount) || isNaN(rate) || isNaN(term) || isNaN(feePercent)) {
+        document.getElementById('result').innerHTML = '❌ Please fill in all fields';
+        return;
+    }
+    
+    if (amount <= 0 || rate <= 0 || term <= 0) {
+        document.getElementById('result').innerHTML = '❌ Loan amount, rate, and term must be positive';
+        return;
+    }
+    
+    if (feePercent < 0 || feePercent > 25) {
+        document.getElementById('result').innerHTML = '❌ Origination fee must be between 0% and 25%';
+        return;
+    }
+    
+    // Calculate origination fee amount
+    let originationFeeAmount = amount * (feePercent / 100);
+    let amountReceived = amount - originationFeeAmount;
+    
+    // Monthly interest rate
+    let monthlyRate = (rate / 100) / 12;
+    
+    // Monthly payment formula
+    let monthlyPayment = (amount * monthlyRate * Math.pow(1 + monthlyRate, term)) / (Math.pow(1 + monthlyRate, term) - 1);
+    
+    // Total payment
+    let totalPayment = monthlyPayment * term;
+    
+    // Total interest
+    let totalInterest = totalPayment - amount;
+    
+    // Total cost including fees
+    let totalCost = totalPayment;
+    
+    document.getElementById('result').innerHTML = `
+        <strong>📆 Monthly Payment:</strong> $${monthlyPayment.toFixed(2)}<br>
+        <strong>💰 Total Interest Paid:</strong> $${totalInterest.toFixed(2)}<br>
+        <strong>💸 Origination Fee:</strong> $${originationFeeAmount.toFixed(2)} (${feePercent}%)<br>
+        <strong>📥 Amount You Receive:</strong> $${amountReceived.toFixed(2)}<br>
+        <strong>📊 Total of All Payments:</strong> $${totalCost.toFixed(2)}<br>
+        <hr>
+        <strong>🏁 Total Cost to Borrow $${amount.toFixed(2)}:</strong> $${totalCost.toFixed(2)}
+    `;
+}
+</script>
+
+<footer>
+    <div class="container">
+        <p>© 2026 CreditLadderHub. <a href="../disclaimer.html">Disclaimer</a> | <a href="../privacy.html">Privacy</a> | <a href="../editorial-guidelines.html">Editorial Guidelines</a></p>
+    </div>
+</footer>
+
+</body>
+</html>
